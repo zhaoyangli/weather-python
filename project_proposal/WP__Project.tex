@@ -59,6 +59,8 @@ $\\ \\ \\ $
 {\center
 {
     {\bf Zhaoyang Li 27838824} \par
+    {\bf Weichen Wan 40072743} \par
+    {\bf Yufei Li 40165883} \par
  {\bf Concordia University} 
 }
 
@@ -112,8 +114,8 @@ $$
         \end{array}
     \right.
 $$
-In words, first I use the classification model to probability of precipitation for a given day.  If the probability of precipitation is above a threshold (usually 0.4 or 0.5), then I give the prediction of the amount of precipitation from the regression.  If it is below the threshold, I predict a value of zero.\par
-I will elect to use this approach for the majority of my modeling techniques learned in this course, as well as well as machine learning classification techniques.  
+In words, first the classification model will be used to probability of precipitation for a given day.  If the probability of precipitation is above a threshold (usually 0.4 or 0.5), then the prediction of the amount of precipitation from the regression will be generated.  If it is below the threshold, the value of zero will be the prediction.\par
+This approach is chosen for the majority of the modelling techniques learned in this course, as well as machine learning classification techniques.  
 
 
 \newpage
@@ -135,7 +137,7 @@ I will elect to use this approach for the majority of my modeling techniques lea
 [Type your answer here. Be concise.]
 
 \subsection{Description}
-I concern ourselves with giving day predictions for the weather station located at the Montreal International Airport. Data was choosen between 2013-2018 due to the quality of daily and hourly data being high, when compared to other weather stations. \par
+We concern ourselves with giving day predictions for the weather station located at the Montreal International Airport. Data was chosen between 2013-2018 due to the quality of daily and hourly data being high, when compared to other weather stations. \par
 
 Here is a list of relevant terminology. For further reference, see \href{https://climate.weather.gc.ca/historical_data/search_historic_data_e.html}{weather data source}.
 
@@ -178,27 +180,27 @@ To be able to perform cross-validation, the dataset has been divided into two pa
 \paragraph{Correlation} Before fitting any models, it would be ideal to check the relation between all features, there are two main reasons, 
 \begin{itemize}
 	\item If two features are highly linear correlated, the model may have multi-collinearity effect.
-	\item Since I are going to fit some of the models like a neural network which contains a lot of hyper parameters, by reducing the number of input, I may obtain less parameters to be tuning when fitting model and consequently reduce the computational load.
+	\item Since we are going to fit some of the models like a neural network which contains a lot of hyper parameters, by reducing the number of input, we may obtain less parameters to be tuning when fitting model and consequently reduce the computational load.
 \end{itemize}
 
 The set up in this analysis of features is to rule out those features that have a correlation coefficient of more than $0.7$ in absolute value.\par
 
 
 \subsubsection{Standardization and Scaling}
-Since my features are expressed in different measurement scales, I standardize or scale the features based on the following:
+Since our features are expressed in different measurement scales, we standardize or scale the features based on the following:
 \begin{itemize}
-\item If the feature can take either positive or negative values, then I standardize it.
-\item If the feature can only take positive values, then I scale it by dividing the range.
+\item If the feature can take either positive or negative values, then we standardize it.
+\item If the feature can only take positive values, then we scale it by dividing the range.
 \end{itemize}
 
 \subsubsection{Artificial Feature}
 
-I are going to add one feature called \pcode{rain} base on the existed feature \pcode{precipitation} which serves as a label for the precipitation. If for a given day, there is positive precipitation, I can consider that day as raining/snowing, and label \pcode{rain = 1}, otherwise I label \pcode{rain = 0}.
+We are going to add one feature called \pcode{rain} base on the existed feature \pcode{precipitation} which serves as a label for the precipitation. If for a given day, there is positive precipitation, we can consider that day as raining/snowing, and label \pcode{rain = 1}, otherwise we label \pcode{rain = 0}.
 
 \subsubsection{Merging}
-Since I are trying to predict the o given day (either rain or precipitation) by considering all features of the previous 7 days, it would convenient to rebuild a bigger dataset by  stacking all the features in the past 7 days as the features for predicting the 8 th day. Note that I also included the raining and the precipitation record of 7 days as a set of new features of predictors, and I believe that this is a valid inclusion.\par
+Since we are trying to predict the o given day (either rain or precipitation) by considering all features of the previous 7 days, it would convenient to rebuild a bigger dataset by  stacking all the features in the past 7 days as the features for predicting the 8 th day. Note that we also included the raining and the precipitation record of 7 days as a set of new features of predictors, and we believe that this is a valid inclusion.\par
 
-By rebuilding the dataset, I have $6\times 7 + 2 \times 7 = 56$ features for predicting the 8th day.
+By rebuilding the dataset, we have $6\times 7 + 2 \times 7 = 56$ features for predicting the 8th day.
 
 
 \newpage
@@ -210,60 +212,60 @@ By rebuilding the dataset, I have $6\times 7 + 2 \times 7 = 56$ features for pre
 [Type your answer here.]
 \\
 
-In this section, I will provide several methods to perform the analysis. For comparison purpose, I also include the traditional times series model. For the machine learning models, I will use some common evaluation metric and cross validation to determine some models.
+In this section, we will provide several methods to perform the analysis. For comparison purpose, we also include the traditional times series model. For the machine learning models, we will use some common evaluation metric and cross validation to determine some models.
 \subsection{Evaluation Metric and Cross Validation}
 
 \subsubsection{Evaluation Metric}
-I use the common evaluation metric described as follows,
+We use the common evaluation metric described as follows,
 \begin{itemize}
-\item For classification, I use \emph{Accuracy}\footnote{Accuracy = 1 -  Error Rate} plus \emph{Confusion Matrix}
-\item For regression, I use \emph{Mean Square Error}.
+\item For classification, We use \emph{Accuracy}\footnote{Accuracy = 1 -  Error Rate} plus \emph{Confusion Matrix}
+\item For regression, We use \emph{Mean Square Error}.
 \end{itemize}
 \subsubsection{Cross Validation}
-\paragraph{Classification} My plan is:  I use a sequential cross validation based on month. I split the training data by month, then I train the model with the first month and use the trained model to predict the next month, I record the number of errors I made. Again, I use all previous months to train the model and make prediction for the new month. As the procedure goes on when running all the training data, I obtain total number of out-of-sample error count, and compute the error rate accordingly. \par
-I choose the model with smallest error rate and use the setting of the model to train all data in the training set and use it to predict the data in the testing set and obtain the error rate. \par
+\paragraph{Classification} My plan is:  We use a sequential cross validation based on month. We split the training data by month, then we train the model with the first month and use the trained model to predict the next month, we record the number of errors we made. Again, we use all previous months to train the model and make prediction for the new month. As the procedure goes on when running all the training data, we obtain total number of out-of-sample error count, and compute the error rate accordingly. \par
+We choose the model with smallest error rate and use the setting of the model to train all data in the training set and use it to predict the data in the testing set and obtain the error rate. \par
 
-\paragraph{Regression} The regression applies similar strategy of sequential cross validation described above for classification but slightly different when training the model. Since I are trying to predict the precipitation, I only use the observations with non-zero precipitation, i.e. the days with rain or snow. Then I make prediction for every single day of the next month. Of course, I are going to set negative precipitation to zero, then I compute the sum of square error. Similarly, I choose the model with least sum of square error and train the whole subset of training data with only raining or snowing days and predict the precipitation in the testing set and obtain MSE.
+\paragraph{Regression} The regression applies similar strategy of sequential cross validation described above for classification but slightly different when training the model. Since we are trying to predict the precipitation, we only use the observations with non-zero precipitation, i.e. the days with rain or snow. Then we make prediction for every single day of the next month. Of course, we are going to set negative precipitation to zero, then we compute the sum of square error. Similarly, we choose the model with least sum of square error and train the whole subset of training data with only raining or snowing days and predict the precipitation in the testing set and obtain MSE.
 
-In summary, I use a subset of all previous months to train the model to predict the next month.
+In summary, we use a subset of all previous months to train the model to predict the next month.
 
 \subsection{Regression and Neural Network}
 
-In this section, I are going to use the linear regression model and  neural network to preform two kind of predictions, the classification and the regression.\par
+In this section, we are going to use the linear regression model and  neural network to preform two kind of predictions, the classification and the regression.\par
 
 \subsubsection{Logistic Regression}
 
 The logistic regression is to perform the first step of the prediction, i.e. whether a given day will rain (snow) or not. For such a simple logistic regression, my learning strategy is designed as follows,
 \begin{itemize}
-	\item I train logistic regression model with the train data and obtain parameters.
-	\item I obtain predictions of training data from the model, and choose the classification threshold with minimum error rate.
-	\item I use the trained model and the optimized threshold to predict the test data and evaluate the error rate.
+	\item We train logistic regression model with the train data and obtain parameters.
+	\item We obtain predictions of training data from the model, and choose the classification threshold with minimum error rate.
+	\item We use the trained model and the optimized threshold to predict the test data and evaluate the error rate.
 \end{itemize}
 
 
 \subsubsection{Linear Regression}
 
-The linear regression to predict the precipitation is similar I have to sub-setting the days with precipitation and use the subset to train the model.
+The linear regression to predict the precipitation is similar We have to sub-setting the days with precipitation and use the subset to train the model.
 
 \begin{itemize}
-	\item I train linear regression model with the train data and obtain parameters.
-	\item I obtain predictions of training data from the model.
-	\item I use the trained model to predict the precipitation in the test data.
+	\item We train linear regression model with the train data and obtain parameters.
+	\item We obtain predictions of training data from the model.
+	\item We use the trained model to predict the precipitation in the test data.
 	\item To avoid negative prediction values, take the maximum of 0 and the predicted precipitation.
-	\item I evaluate the prediction by MSE.
+	\item We evaluate the prediction by MSE.
 \end{itemize}
-Note that, in this case, misclassification of raining day and non-raining day have, practically, no difference, so I do not assign cost of misclassification. 
+Note that, in this case, misclassification of raining day and non-raining day have, practically, no difference, so we do not assign cost of misclassification. 
 
 The training MSE and testing MSE are summarized below,
 
 \subsubsection{Classic Neural Network}
 
-\paragraph{Single Layer Neural Network} For single layer Neural Network, with consideration of the computational load, I only try hidden unit in the set $S = \set{10,20,\ldots,150}$. For each hidden unit in the set, to obtain the error rate, I should run approximately 48 times of a neural net with same level of hidden unit by the cross validation strategy mentioned above.
+\paragraph{Single Layer Neural Network} For single layer Neural Network, with consideration of the computational load, we only try hidden unit in the set $S = \set{10,20,\ldots,150}$. For each hidden unit in the set, to obtain the error rate, we should run approximately 48 times of a neural net with same level of hidden unit by the cross validation strategy mentioned above.
 
 
 
 \subsection{Other Analyses}
-I will also perform some of the traditional analyses for the classification, such as \emph{Random Forest, Adaptive Boosting} and \emph{K-Nearest Neighbor} 
+We will also perform some of the traditional analyses for the classification, such as \emph{Random Forest, Adaptive Boosting} and \emph{K-Nearest Neighbor} 
 
 \newpage
 % \pagenumbering{arabic}
@@ -283,7 +285,7 @@ I will also perform some of the traditional analyses for the classification, suc
 [Type your answer here.]
 \\
 
-Matplotlib, NLTK. Pandas, Seaborn, Numpy, Keras, Scipy, PyTorch, TensorFlow, Scikit-learn should be good for now, I will add more packages in the future if necessary.
+Matplotlib, NLTK. Pandas, Seaborn, Numpy, Keras, Scipy, PyTorch, TensorFlow, Scikit-learn should be good for now, we will add more packages in the future if necessary.
 
 \pagebreak
 
