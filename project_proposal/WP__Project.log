@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2022.3.20)  5 NOV 2022 11:35
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2022.3.20)  5 NOV 2022 12:00
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1006,7 +1006,7 @@ t/fonts/type1/public/amsfonts/cm/cmti10.pfb><d:/texlive/2021/texmf-dist/fonts/t
 ype1/public/amsfonts/cm/cmtt10.pfb><d:/texlive/2021/texmf-dist/fonts/type1/publ
 ic/amsfonts/symbols/msbm10.pfb><d:/texlive/2021/texmf-dist/fonts/type1/public/c
 m-super/sfrm1095.pfb>
-Output written on WP__Project.pdf (12 pages, 188857 bytes).
+Output written on WP__Project.pdf (12 pages, 188551 bytes).
 PDF statistics:
  235 PDF objects out of 1000 (max. 8388607)
  191 compressed objects within 2 object streams
