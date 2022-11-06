@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2022.3.20)  5 NOV 2022 12:11
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2022.3.20)  5 NOV 2022 22:58
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -933,19 +933,19 @@ Underfull \hbox (badness 10000) in paragraph at lines 57--58
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 73--74
+Underfull \hbox (badness 10000) in paragraph at lines 74--75
 
  []
 
 [1
 
 {d:/texlive/2021/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-Underfull \hbox (badness 10000) in paragraph at lines 84--88
+Underfull \hbox (badness 10000) in paragraph at lines 85--89
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 84--88
+Underfull \hbox (badness 10000) in paragraph at lines 85--89
 
  []
 
@@ -953,42 +953,41 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.95 \newpage
+l.96 \newpage
               [1]
-Underfull \hbox (badness 10000) in paragraph at lines 100--105
+Underfull \hbox (badness 10000) in paragraph at lines 101--106
 
  []
 
 [2] [3] [4] [5] [6]
-Underfull \hbox (badness 10000) in paragraph at lines 209--212
+Underfull \hbox (badness 10000) in paragraph at lines 210--213
 
  []
 
 LaTeX Font Info:    Font shape `U/lasy/b/n' in size <9> not available
-(Font)              Font shape `U/lasy/m/n' tried instead on input line 219.
+(Font)              Font shape `U/lasy/m/n' tried instead on input line 220.
 LaTeX Font Info:    Font shape `U/lasy/b/n' in size <5> not available
-(Font)              Font shape `U/lasy/m/n' tried instead on input line 219.
+(Font)              Font shape `U/lasy/m/n' tried instead on input line 220.
 [7] [8] [9]
-Underfull \hbox (badness 10000) in paragraph at lines 274--276
+Underfull \hbox (badness 10000) in paragraph at lines 275--282
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 275--282
 
  []
 
 [10]
-Underfull \hbox (badness 10000) in paragraph at lines 282--285
+Underfull \hbox (badness 10000) in paragraph at lines 287--290
 
  []
 
 [11]
 No file WP__Project.bbl.
 (./WP__Project.aux)
-
-Package rerunfilecheck Warning: File `WP__Project.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `WP__Project.out':
-(rerunfilecheck)             Before: 991935E871FBEEBABBEB68F9A7DED01D;2979
-(rerunfilecheck)             After:  06D7C17C3BC394FCE46F6ED41B972C8B;2974.
+Package rerunfilecheck Info: File `WP__Project.out' has not changed.
+(rerunfilecheck)             Checksum: 06D7C17C3BC394FCE46F6ED41B972C8B;2974.
  ) 
 Here is how much of TeX's memory you used:
  27211 strings out of 478276
@@ -997,7 +996,7 @@ Here is how much of TeX's memory you used:
  44887 multiletter control sequences out of 15000+600000
  484011 words of font info for 85 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 84i,9n,89p,837b,437s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 84i,9n,89p,837b,439s stack positions out of 5000i,500n,10000p,200000b,80000s
 {d:/texlive/2021/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}<d:/tex
 live/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><d:/texlive/2021
 /texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><d:/texlive/2021/texmf-di
@@ -1012,7 +1011,7 @@ t/fonts/type1/public/amsfonts/cm/cmti10.pfb><d:/texlive/2021/texmf-dist/fonts/t
 ype1/public/amsfonts/cm/cmtt10.pfb><d:/texlive/2021/texmf-dist/fonts/type1/publ
 ic/amsfonts/symbols/msbm10.pfb><d:/texlive/2021/texmf-dist/fonts/type1/public/c
 m-super/sfrm1095.pfb>
-Output written on WP__Project.pdf (12 pages, 188861 bytes).
+Output written on WP__Project.pdf (12 pages, 190000 bytes).
 PDF statistics:
  235 PDF objects out of 1000 (max. 8388607)
  191 compressed objects within 2 object streams
