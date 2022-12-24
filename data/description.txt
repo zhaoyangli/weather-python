@@ -1,6 +1,2 @@
-augmented_data.csv:实际可train的data,前两列为当天实际数据就是y,后面为之前七天的features.自己train的时候我是前1421个observation当test set,后面384个当test set
-
-Station Inventory EN.csv: 最原始data
-
-data.csv
-data_std.csv:处理data的中间步骤,最后只选了 mean_tmp, mean_RH, mean_press, mean_Wind_speed, Cold_Deg_days and spd_max_gust. There are 6 features in total.加上precipitation和rian,7天就是7*8=56个feature
+augmented_data.csv:
+date ready for train, 1805 observations, 56 features, the first 3 rows are labels and index
