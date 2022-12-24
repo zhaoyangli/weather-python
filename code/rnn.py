@@ -84,36 +84,6 @@ class VanillaRNN(torch.nn.Module):
 
         return out
 
-
-def data_generation(L, N, D=1, prob=0.05):
-    """This function generates random sequences of 0 and 1.
-    The label is 1 if there is at least one element of the
-    sequence that contains 1.
-
-    Arguments
-    ---------
-    L : int
-      Lenght of the sequences.
-    N: int
-      Number of examples.
-    D: int
-      Number of output features.
-    prob: float:
-      Probability to draw a 1.
-
-    Returns
-    ---------
-    X: torch.Tensor
-      Tensor of dimensionality (L,N,D) containing
-      the generated sequences.
-    y: torch.Tensor
-      Tensor of dimensionality (N,1) containing the labels.
-    """
-    X = torch.bernoulli(torch.full((N, L, D), prob)).float()
-    y = torch.any(X >= 1.0, dim=1).float()
-    return X, y
-
-
 rnn = VanillaRNN(input_size=1, hidden_size=4, num_layers=2)
 rnn.train()
 out = rnn(X[0:100, :, :])
